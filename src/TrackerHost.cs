@@ -69,6 +69,7 @@ namespace Tsunami
         public void Run()
         {
             string s;
+            Console.Clear();
             context.Print(Console.Out);
             Console.Out.WriteLine();
 
@@ -85,6 +86,9 @@ namespace Tsunami
             if (s != "__RefreshTheScreen__")
                 r = context.Handle(s) != Result.ShouldPop;
 
+            if (!r)
+                return r;
+			
             Console.Clear();
             context.Print(Console.Out);
             Console.Out.WriteLine();
