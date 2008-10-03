@@ -35,9 +35,6 @@ namespace Tsunami
         public RemoveListenerContext(Context parent)
         {
             Parent = parent;
-
-            foreach (Uri uri in ((GeneralContext)BaseContext).Tracker.Listeners.Keys)
-                Options.Add(new Option(uri.ToString(), (Options.Count + 1).ToString()));
         }
 
         protected override Result HandleImpl(string line)
@@ -55,6 +52,10 @@ namespace Tsunami
 
         protected override void PrintImpl(System.IO.TextWriter writer)
         {
+            Options.Clear();
+            foreach (Uri uri in ((GeneralContext)BaseContext).Tracker.Listeners.Keys)
+                Options.Add(new Option(uri.ToString(), (Options.Count + 1).ToString()));
+            
             writer.WriteLine("Choose the address to stop monitoring");
             base.PrintImpl(writer);
         }

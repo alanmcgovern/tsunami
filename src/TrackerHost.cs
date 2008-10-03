@@ -86,9 +86,9 @@ namespace Tsunami
             if (s != "__RefreshTheScreen__")
                 r = context.Handle(s) != Result.ShouldPop;
 
-            if (!r)
+            if (!r && s != "__RefreshTheScreen__")
                 return r;
-			
+            
             Console.Clear();
             context.Print(Console.Out);
             Console.Out.WriteLine();

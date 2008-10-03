@@ -35,13 +35,14 @@ namespace Tsunami
         public ListListenersContext(Context parent)
         {
             Parent = parent;
-
-            foreach (Uri uri in ((GeneralContext)BaseContext).Tracker.Listeners.Keys)
-                Options.Add(new Option(uri.ToString(), (Options.Count + 1).ToString()));
         }
 
         protected override void PrintImpl(System.IO.TextWriter writer)
         {
+            Options.Clear();
+            foreach (Uri uri in ((GeneralContext)BaseContext).Tracker.Listeners.Keys)
+                Options.Add(new Option(uri.ToString()));
+            
             writer.WriteLine("There are {0} registered addresses", Options.Count);
             base.PrintImpl(writer);
         }

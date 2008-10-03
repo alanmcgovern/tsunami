@@ -27,6 +27,7 @@
 //
 
 using System;
+using System.IO;
 
 namespace Tsunami
 {
@@ -35,9 +36,16 @@ namespace Tsunami
         public ListDirectoriesContext(Context parent)
         {
             Parent = parent;
+        }
 
+        protected override void PrintImpl(TextWriter writer)
+        {
+            Options.Clear();
             foreach (string s in ((GeneralContext)BaseContext).Tracker.Watchers.Keys)
                 Options.Add(new Option(s));
+
+            writer.WriteLine("There are {0} monitored directories");
+            base.PrintImpl(writer);
         }
     }
 }

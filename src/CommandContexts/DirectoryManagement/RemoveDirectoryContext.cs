@@ -35,8 +35,6 @@ namespace Tsunami
         public RemoveDirectoryContext(Context parent)
         {
             Parent = parent;
-            foreach (string s in ((GeneralContext)BaseContext).Tracker.Watchers.Keys)
-                Options.Add(new Option(s, (Options.Count + 1).ToString()));
         }
 
         protected override Result HandleImpl(string line)
@@ -54,6 +52,10 @@ namespace Tsunami
 
         protected override void PrintImpl(System.IO.TextWriter writer)
         {
+            Options.Clear();
+            foreach (string s in ((GeneralContext)BaseContext).Tracker.Watchers.Keys)
+                Options.Add(new Option(s, (Options.Count + 1).ToString()));
+            
             writer.WriteLine("Choose the directory to stop monitoring");
             base.PrintImpl(writer);
         }

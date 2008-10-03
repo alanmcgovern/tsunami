@@ -39,6 +39,7 @@ namespace Tsunami
         {
             get { return options.Count; }
         }
+        
         public Option this[int index]
         {
             get { return options[index]; }
@@ -55,6 +56,11 @@ namespace Tsunami
         {
             foreach (Option o in options)
                 Add(o);
+        }
+
+        public void Clear()
+        {
+            options.Clear();
         }
 
         public Option Find (Predicate<Option> predicate)
