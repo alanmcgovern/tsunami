@@ -1,18 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tsunami", "src/Tsunami.csproj", "{907A9A8F-B472-479F-8643-A1A82057CD32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tsunami", "src\Tsunami.csproj", "{907A9A8F-B472-479F-8643-A1A82057CD32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Stats|Any CPU = Stats|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{907A9A8F-B472-479F-8643-A1A82057CD32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{907A9A8F-B472-479F-8643-A1A82057CD32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{907A9A8F-B472-479F-8643-A1A82057CD32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{907A9A8F-B472-479F-8643-A1A82057CD32}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		name = Tsunami
+		version = 0.1
+		StartupItem = src\Tsunami.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
