@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{907A9A8F-B472-479F-8643-A1A82057CD32}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tsunami</RootNamespace>
+    <AssemblyName>Tsunami</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandContexts\DirectoryManagement\AddDirectoryContext.cs" />
+    <Compile Include="CommandContexts\DirectoryManagement\DirectoryContext.cs" />
+    <Compile Include="CommandContexts\ListenerManagement\AddListenerContext.cs" />
+    <Compile Include="CommandContexts\Context.cs" />
+    <Compile Include="CommandContexts\GeneralContext.cs" />
+    <Compile Include="CommandContexts\DirectoryManagement\ListDirectoriesContext.cs" />
+    <Compile Include="CommandContexts\ListenerManagement\ListenerContext.cs" />
+    <Compile Include="CommandContexts\ListenerManagement\ListListenersContext.cs" />
+    <Compile Include="CommandContexts\ListenerManagement\RemoveListenerContext.cs" />
+    <Compile Include="CommandContexts\Options\Option.cs" />
+    <Compile Include="CommandContexts\Options\Options.cs" />
+    <Compile Include="CommandContexts\DirectoryManagement\RemoveDirectoryContext.cs" />
+    <Compile Include="CommandContexts\StatisticsContext.cs" />
+    <Compile Include="getline.cs" />
+    <Compile Include="MainClass.cs" />
+    <Compile Include="TrackerHost.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <GtkDesignInfo />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>
