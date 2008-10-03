@@ -27,6 +27,7 @@
 //
 
 using System;
+using System.IO;
 
 namespace Tsunami
 {
@@ -35,7 +36,32 @@ namespace Tsunami
         static void Main(string[] args)
         {
             TrackerHost host = new TrackerHost();
+            ParseArgs(args, host);
             host.Run();
+        }
+
+        static void ParseArgs(string[] args, TrackerHost host)
+        {
+            for (int i = 0; (i +1) < args.Length; i += 2)
+            {
+                switch(args[i])
+                {
+                case ("-d"):
+                    if (!System.IO.Directory.Exists (args[i+1]))
+                        Console.WriteLine ("Invalid directory: {0}", args[i+1]);
+    	            else
+                        host.AddWatcher(args[i+1]);
+                    break;
+                    
+                case ("-u"):
+                    Uri uri;
+                    if (!Uri.TryCreate (args[i+1], UriKind.Absolute, out uri))
+                        Console.WriteLine ("Invalid url: {0}", args[i+1]);
+                    else
+                        host.AddListener (uri);
+                    break;
+                }
+            }
         }
     }
 }
