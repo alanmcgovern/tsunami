@@ -44,7 +44,7 @@ namespace Tsunami
             foreach (string s in ((GeneralContext)BaseContext).Tracker.Watchers.Keys)
                 Options.Add(new Option(s));
 
-            writer.WriteLine("There are {0} monitored directories");
+            writer.WriteLine("There are {0} monitored directories", Options.Count);
             base.PrintImpl(writer);
         }
     }
